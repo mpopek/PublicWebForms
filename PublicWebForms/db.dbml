@@ -1,0 +1,738 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="OsaPublicWeb" Class="dbDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=ODDYSSE-PC\SQLEXPRESS;Initial Catalog=OsaPublicWeb;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="OsaPublicWebConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.OSATBL_PWF_Hlaseni" Member="OSATBL_PWF_Hlasenis">
+    <Type Name="OSATBL_PWF_Hlaseni">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nazev" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="adresa" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="obdobiHlaseni" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="hrubePrijmy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkovaNavstevnost" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_Zadost" Member="OSATBL_PWF_Zadosts">
+    <Type Name="OSATBL_PWF_Zadost">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="formGuid" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="xml" Type="System.String" DbType="NVarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="emailForSend" Type="System.String" DbType="VarChar(512)" CanBeNull="true" />
+      <Column Name="pdf" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_Hlaseni_FilmoveProjekce" Member="OSATBL_PWF_Hlaseni_FilmoveProjekces">
+    <Type Name="OSATBL_PWF_Hlaseni_FilmoveProjekce">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="formGuid" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="cisloKina" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="adresa" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="hrubePrijmy" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkovaNavstevnost" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_Hlaseni_FilmovyFestival" Member="OSATBL_PWF_Hlaseni_FilmovyFestivals">
+    <Type Name="OSATBL_PWF_Hlaseni_FilmovyFestival">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="formGuid" Type="System.String" DbType="VarChar(64)" CanBeNull="true" />
+      <Column Name="nazevFestivalu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mistoKonani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_HudebniSestava" Member="OSATBL_PWF_HudebniSestavas">
+    <Type Name="OSATBL_PWF_HudebniSestava">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="vyrobce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reziser" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="druhNosice" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkovaStopazNosice" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_HudebniSestava_Polozky" Member="OSATBL_PWF_HudebniSestava_Polozkies">
+    <Type Name="OSATBL_PWF_HudebniSestava_Polozky">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="formGuid" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="cisloSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="stopaz" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorHudby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorTextu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorUprav" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="interpret" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevARok" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_LicSml" Member="OSATBL_PWF_LicSmls">
+    <Type Name="OSATBL_PWF_LicSml">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nazev" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ulice" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pravniFormaJina" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="zastupovany" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_LicSmlZivVerHudPro" Member="OSATBL_PWF_LicSmlZivVerHudPros">
+    <Type Name="OSATBL_PWF_LicSmlZivVerHudPro">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nazev" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ulice" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pravniFormaJina" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="zastupovany" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevMistaKonani" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="mestoKonani" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="uliceKonani" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="pscKonani" Type="System.String" DbType="NVarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="seznamKonani" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamKonaniFile" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="datumKonani" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_Po" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_Ut" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_St" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_Ct" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_Pa" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_So" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="produkceOpakDny_Ne" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="hodinaOdDo" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="kapacitaMistaKonani" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProdukce" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="cenyVsechDruhuVstupneho" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="pocetProdukciCelkem" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="jmenoInterpreta" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="pocetUcinkujicich" Type="System.String" DbType="NVarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="druhProdukce" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ostatniTypyProdukce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="seznamProdukce" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamProdukceFile" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="seznamRepList" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamRepListFile" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_OznameniOSkladbach" Member="OSATBL_PWF_OznameniOSkladbaches">
+    <Type Name="OSATBL_PWF_OznameniOSkladbach">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="vydavatel" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="cisloNosice" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nazevNosice" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="celkovaMinutaz" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="lisovna" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_OznameniOSkladbach_Polozky" Member="OSATBL_PWF_OznameniOSkladbach_Polozkies">
+    <Type Name="OSATBL_PWF_OznameniOSkladbach_Polozky">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="formGuid" Type="System.String" DbType="VarChar(64) NOT NULL" CanBeNull="false" />
+      <Column Name="cisloSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="minutazSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorHudby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorTextu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zpracovatel" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="interpret" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_OznameniOUdeleniSouhlasu" Member="OSATBL_PWF_OznameniOUdeleniSouhlasus">
+    <Type Name="OSATBL_PWF_OznameniOUdeleniSouhlasu">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="NazevFilmu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="NazevSkladby" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AutorHudby" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="AutorTextu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Nakladatel" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Label" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ZpracovatelHudby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Subtextar" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="VyrobceReklamy" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Zadavatel" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="HudebniStopaz" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="DruhUziti" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="ZpusobUziti" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="SouhlasUdelil" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DobaTrvaniLicence" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="Poznamky" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="EmailProPotvrzeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_Partnerstvi" Member="OSATBL_PWF_Partnerstvis">
+    <Type Name="OSATBL_PWF_Partnerstvi">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskovBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTiskov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="podekovaniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="podekovani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaProgramBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaProgram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rozdavaniPropMatBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="rozdavaniPropMat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaWebBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_PartnerstviOsaPomaha" Member="OSATBL_PWF_PartnerstviOsaPomahas">
+    <Type Name="OSATBL_PWF_PartnerstviOsaPomaha">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskovBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTiskov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="podekovaniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="podekovani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaProgramBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaProgram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rozdavaniPropMatBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="rozdavaniPropMat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaWebBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_PartnerstviOsaTalent" Member="OSATBL_PWF_PartnerstviOsaTalents">
+    <Type Name="OSATBL_PWF_PartnerstviOsaTalent">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskovBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTiskov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="podekovaniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="podekovani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaProgramBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaProgram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rozdavaniPropMatBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="rozdavaniPropMat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaWebBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho2" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzoriAMedialniSponzori2" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_PartnerstviOsaZive" Member="OSATBL_PWF_PartnerstviOsaZives">
+    <Type Name="OSATBL_PWF_PartnerstviOsaZive">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskovBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTiskov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="podekovaniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="podekovani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaProgramBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaProgram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rozdavaniPropMatBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="rozdavaniPropMat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaWebBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_PartnerstviPremieryOsa" Member="OSATBL_PWF_PartnerstviPremieryOsas">
+    <Type Name="OSATBL_PWF_PartnerstviPremieryOsa">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskovBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTiskov" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="podekovaniBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="podekovani" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaProgramBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaProgram" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="prezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="rozdavaniPropMatBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="rozdavaniPropMat" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaWebBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaWeb" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_PartnerstviVyrobenoSOsa" Member="OSATBL_PWF_PartnerstviVyrobenoSOsas">
+    <Type Name="OSATBL_PWF_PartnerstviVyrobenoSOsa">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="prvniZadost" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zadostNeHodnota" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="zadostiUspokojeny" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="nazevProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nazevOsoby" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="ICRC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="DIC" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="statutarniZastupce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="funkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="pravniForma" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="registrace" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="bankovniSpojeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nazevBanky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="cisloUctu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kraj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="mesto" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="psc" Type="System.String" DbType="NVarChar(5)" CanBeNull="true" />
+      <Column Name="tel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="www" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="kontaktTel" Type="System.String" DbType="NVarChar(13)" CanBeNull="true" />
+      <Column Name="kontaktEmail" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="vaseCinnost" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="delkaPusobeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="reference" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="predpoklady" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="popisCileProjektu" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="seznamVykonnych" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="mistoRealizace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="casovyPrubeh" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="odhadovanyPocetNavstevniku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kategorieVstupneho" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="sponzori" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="rozpocet" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vlastniZdroje" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="vCelkRozp" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="ziskaneProstredky" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="naProjZJinZdroj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaProj" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="celkoveNakladyNaVyk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zTohoNaCestovne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaWebuBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaNaWebu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaNaBookletBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="[umisteniLogaNaBooklet¨]" Member="umisteniLogaNaBooklet_" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaAPrezentaceBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaAPrezentace" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="umisteniLogaTiskBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="umisteniLogaTisk" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="zmineniOsaGeneralBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="zmineniOsaGeneral" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="bezplatnePoskytnutiBool" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="bezplatnePoskytnuti" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nabidkaPlneni" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="prohlaseniJmeno" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniFunkce" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="prohlaseniDatum" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_Pronajimani" Member="OSATBL_PWF_Pronajimanis">
+    <Type Name="OSATBL_PWF_Pronajimani">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nazevSubjektu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sidlo" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="zastupujiciOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="zapisVRejstriku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniAdresa" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_VydavaniNosicu" Member="OSATBL_PWF_VydavaniNosicus">
+    <Type Name="OSATBL_PWF_VydavaniNosicu">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nazevSubjektu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sidlo" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="zastupujiciOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="zapisVRejstriku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniAdresa" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="nosic1_nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_typ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_naklad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_neprodejne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nosic1_souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nosic2_nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_typ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_naklad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_neprodejne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nosic2_souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_VyrobaDovoz" Member="OSATBL_PWF_VyrobaDovozs">
+    <Type Name="OSATBL_PWF_VyrobaDovoz">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nazevSubjektu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sidlo" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="zastupujiciOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="zapisVRejstriku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniAdresa" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_VyrobaReklamy" Member="OSATBL_PWF_VyrobaReklamies">
+    <Type Name="OSATBL_PWF_VyrobaReklamy">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nazevSubjektu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sidlo" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="zastupujiciOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="zapisVRejstriku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniAdresa" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="nazevSkladby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorHudby" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="autorTextu" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="interpret" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="datumNasazeni" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="druhSpotu_TV" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="druhSpotu_rozhlas" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="druhSpotu_kino" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="druhSpotu_internet" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="pozadovanaDoba_1mesic" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="pozadovanaDoba_3mesice" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="pozadovanaDoba_6mesicu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="pozadovanaDoba_12mesicu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="sazebnik" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OSATBL_PWF_VyrobaVydavani" Member="OSATBL_PWF_VyrobaVydavanis">
+    <Type Name="OSATBL_PWF_VyrobaVydavani">
+      <Column Name="guid" Type="System.String" DbType="VarChar(64) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="requestId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="createDate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="nazevSubjektu" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="sidlo" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="ic" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="dic" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="zastupujiciOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="zapisVRejstriku" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniOsoba" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="telefon" Type="System.String" DbType="NVarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="kontaktniAdresa" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="nosic1_nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_typ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_naklad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_neprodejne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nosic1_souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic1_soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="nosic2_nazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_typ" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_naklad" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_neprodejne" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_poznamka" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="nosic2_souborNazev" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="nosic2_soubor" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" UpdateCheck="Never" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 21, 29.25" name="db">
+  <DataContextMoniker Name="/dbDataContext" />
+  <nestedChildShapes>
+    <classShape Id="080d1c64-6d1a-41c8-a801-ba511a852c92" absoluteBounds="0.75, 0.75, 2, 2.9247054036458326">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Hlaseni" />
+      <nestedChildShapes>
+        <elementListCompartment Id="804c045a-b3f0-4931-9f1d-aab27a004adb" absoluteBounds="0.765, 1.21, 1.9700000000000002, 2.364705403645833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="5b9c65bd-2f96-4743-b440-75febea7dbf4" absoluteBounds="3.75, 0.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Zadost" />
+      <nestedChildShapes>
+        <elementListCompartment Id="d62b4106-c855-4be7-a566-5de562fffb66" absoluteBounds="3.765, 1.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29238b5e-0ad4-4617-908c-8fb275047ce7" absoluteBounds="3.75, 3.75, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Hlaseni_FilmoveProjekce" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a0631e6b-e30d-4967-924d-3c3379b9822e" absoluteBounds="3.765, 4.21, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29682e57-8316-48bb-889a-c502f9c70c17" absoluteBounds="6.75, 0.75, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Hlaseni_FilmovyFestival" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9093e67c-9580-4396-93bc-ee0d6769f65d" absoluteBounds="6.765, 1.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="37b8546c-7dca-47aa-8edd-7d892924a06c" absoluteBounds="0.75, 6.75, 2, 2.3478011067708344">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_HudebniSestava" />
+      <nestedChildShapes>
+        <elementListCompartment Id="83e31834-bea1-4061-bdaa-7434be42c574" absoluteBounds="0.765, 7.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9df0f5be-25c2-4a41-89f2-5dd1df19130f" absoluteBounds="6.75, 3.75, 2, 2.7324039713541666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_HudebniSestava_Polozky" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0d6a53b4-be3b-497a-9eda-0a721f18ef7c" absoluteBounds="6.765, 4.21, 1.9700000000000002, 2.1724039713541665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="783f9088-5d6e-44a3-a8b5-5b54f7462946" absoluteBounds="3.75, 7.75, 2, 3.6939111328124987">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_LicSml" />
+      <nestedChildShapes>
+        <elementListCompartment Id="70781b2b-3b72-44d6-864c-e60b5f29039a" absoluteBounds="3.765, 8.21, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="4917fb33-e36d-417f-bff8-293116e30475" absoluteBounds="6.75, 7.75, 2, 8.8860498046875023">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_LicSmlZivVerHudPro" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0012944b-1208-4bc5-a2e9-b99518f5dfd6" absoluteBounds="6.765, 8.21, 1.9700000000000002, 8.3260498046875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6acc302a-895e-4c65-869e-5c073fc587b1" absoluteBounds="9.75, 0.75, 2, 2.3478011067708335">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_OznameniOSkladbach" />
+      <nestedChildShapes>
+        <elementListCompartment Id="061e3da3-2bab-450c-b45a-bd1e4e2847f3" absoluteBounds="9.765, 1.21, 1.9700000000000002, 1.7878011067708335" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="344b2ab2-19e4-4f8f-8a46-38ee8b8c70a7" absoluteBounds="9.75, 4.75, 2, 2.5401025390625005">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_OznameniOSkladbach_Polozky" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9e06de53-222a-4a73-b0a5-5c1a4144df82" absoluteBounds="9.765, 5.21, 1.9700000000000002, 1.9801025390625" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c8d9237a-1ffb-4589-a902-f6a0cfc9c224" absoluteBounds="9.75, 8.75, 2, 4.6554182942708309">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_OznameniOUdeleniSouhlasu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b8305d72-68c0-4f15-aaca-2329d8a85a5c" absoluteBounds="9.765, 9.21, 1.9700000000000002, 4.095418294270833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8960e4ae-b0e5-432b-ad2a-7345882606ee" absoluteBounds="12.75, 0.75, 2, 13.308982747395833">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Partnerstvi" />
+      <nestedChildShapes>
+        <elementListCompartment Id="25c90869-556b-4ec9-9d9e-e5da2b97fb00" absoluteBounds="12.765, 1.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8726f8e7-b772-43f0-b559-c84503c3a72a" absoluteBounds="0.75, 12.75, 2, 13.308982747395831">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_PartnerstviOsaPomaha" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ce649013-fc06-454b-8794-100aa0568adb" absoluteBounds="0.765, 13.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ca3e434c-a542-4dfa-a431-bfed75db11a8" absoluteBounds="15.75, 0.75, 2, 13.885887044270833">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_PartnerstviOsaTalent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0da49220-3da2-4fe4-bc10-8e4fbb818de8" absoluteBounds="15.765, 1.21, 1.9700000000000002, 13.325887044270832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4fa29c0-f14c-4ab3-8b3c-7877d618cb69" absoluteBounds="9.75, 15.75, 2, 13.308982747395831">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_PartnerstviOsaZive" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ceaef5b8-a663-4e37-9ed9-c145d4361a0c" absoluteBounds="9.765, 16.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d1068988-e42f-4a2f-80b4-d356c624aeec" absoluteBounds="12.75, 15.75, 2, 13.308982747395831">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_PartnerstviPremieryOsa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3cd8d9b7-ef31-46b0-82a1-afd4298b4304" absoluteBounds="12.765, 16.21, 1.9700000000000002, 12.748982747395832" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="d509e963-a035-4c68-893d-98d0cf0a5407" absoluteBounds="15.75, 15.75, 2, 12.539777018229167">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_PartnerstviVyrobenoSOsa" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ad43d9f2-dde0-49b7-9c80-9be1fcd2861a" absoluteBounds="15.765, 16.21, 1.9700000000000002, 11.979777018229166" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="13389b72-7dc2-447d-a1ed-e568f2908cc6" absoluteBounds="3.75, 17.75, 2, 4.0785139973958309">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_Pronajimani" />
+      <nestedChildShapes>
+        <elementListCompartment Id="233f3c94-c5cb-4dff-8533-f402f3143cfd" absoluteBounds="3.765, 18.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="aaad13b7-9212-4ad9-bd82-ca86d81c8286" absoluteBounds="18.75, 0.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_VydavaniNosicu" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9a040ad0-ddfe-4042-bdbf-cdd42b7cac04" absoluteBounds="18.765, 1.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a74cefef-e885-4585-b50a-1bfc764de346" absoluteBounds="18.75, 7.75, 2, 3.8862125651041666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_VyrobaDovoz" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8b6e16a7-2f86-442b-9ddd-6074856116c9" absoluteBounds="18.765, 8.21, 1.9700000000000002, 3.3262125651041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="29cb4f1e-58ba-462e-b6e5-d89cb57a8199" absoluteBounds="18.75, 12.75, 2, 6.3861311848958309">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_VyrobaReklamy" />
+      <nestedChildShapes>
+        <elementListCompartment Id="a1689c39-604e-4538-ac45-39da8723a98d" absoluteBounds="18.765, 13.21, 1.9700000000000002, 5.826131184895833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="8645e059-a2c0-4fa3-863d-1d2d8e2598b7" absoluteBounds="18.75, 20.75, 2, 6.1938297526041666">
+      <DataClassMoniker Name="/dbDataContext/OSATBL_PWF_VyrobaVydavani" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0e62d02e-ee6d-435e-bc6f-e79c6e47843a" absoluteBounds="18.765, 21.21, 1.9700000000000002, 5.6338297526041661" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -1,0 +1,7 @@
+D:\Work\OSA\Veřejný web\VVForms\VVForms\obj\Debug\ResolveAssemblyReference.cache
+D:\Work\OSA\Veřejný web\VVForms\VVForms\bin\MSCaptcha.dll
+D:\Work\OSA\Veřejný web\VVForms\VVForms\bin\MSCaptcha.xml
+D:\Work\OSA\Veřejný web\VVForms\VVForms\bin\PublicWebForms.dll
+D:\Work\OSA\Veřejný web\VVForms\VVForms\bin\PublicWebForms.pdb
+D:\Work\OSA\Veřejný web\VVForms\VVForms\obj\Debug\PublicWebForms.dll
+D:\Work\OSA\Veřejný web\VVForms\VVForms\obj\Debug\PublicWebForms.pdb

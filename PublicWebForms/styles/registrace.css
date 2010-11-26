@@ -1,0 +1,66 @@
+﻿/* CSS Document */
+body { font: 0.8em/160% arial, helvetica, sans-serif; }
+h1 { background: url(../images/logo-osa.png) no-repeat top left; height: 100px; vertical-align: middle; display: table-cell; font-size: 140%; font-weight: normal; color: #008BCC; margin: 0; padding: 0; padding-left: 100px; }
+h2 { font-size: 120%; margin: 0; padding: 0 0 7px 7px; }
+a { color: #008BCC; text-decoration: underline; }
+a:hover { text-decoration: none; }
+label { font-weight: bold; }
+input.text { padding: 5px 3px; border: none; background: #FFF; }
+textarea { padding: 5px 3px; border: none; background: #FFF; }
+input[type="file"]{ background: #FFF; border: none; padding: 5px 3px; }
+select { padding: 5px 3px; border: none; background: #FFF; }
+p { padding: 0 7px; }
+
+#page { width: 600px; margin: 0 auto; }
+.header { padding: 7px; width: 100%; }
+
+table { width: 100%; }
+table th { background: #DADADA; border-bottom: 1px solid #FFF; font-weight: bold; text-align: left; padding: 5px 7px; width: 200px; }
+table th.label {  width: 200px; vertical-align: top; }
+table td { background: #DADADA; border-bottom: 1px solid #FFF; text-align: left; padding: 5px 7px; }
+table td p { padding: 0; margin: 3px 0; }
+table td.noline { border: none; vertical-align: top; }
+table td.label {  width: 200px; border: none; vertical-align: top; }
+table td.nopadding { padding: 0; }
+table td.w25 { width: 25%; }
+
+table.file td { padding: 0; border: 0; }
+
+ul.list { margin: 10px 0 10px 7px; padding: 0; }
+ul.list li { list-style: none; background: url(../images/bullet.png) 0 0.6em no-repeat; padding-left: 10px; }
+
+
+
+/* Checkboxes */
+label.checkbox_checked { background: url(../images/tick.png) 0 0.2em no-repeat; display: block; margin: 0; padding-left: 25px; }
+label.checkbox_unchecked  { background: url(../images/empty.png) 0 0.2em no-repeat; display: block; margin: 0; padding-left: 25px; }
+
+/* Radio Buttons */
+label.radio_checked { background: url(../images/tick.png) no-repeat; display: block; margin: 0; padding-left: 25px; }
+label.radio_unchecked  { background: url(../images/empty.png) no-repeat; display: block; margin: 0; padding-left: 25px; }
+
+
+/* Hover State */
+label.checkbox_checked:hover, label.checkbox_unchecked { cursor: pointer; }
+
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+/* STOP EDITTING - DO NOT CHANGE OR REMOVE        */
+.crirHidden { position: absolute; left: -1000px; }
+/* XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX */
+
+.required { color: #008BCC; font-weight: bold; }
+.copyright { color: #706F6F; }
+.copyright a { color: #706F6F; text-decoration: none; }
+.copyright a:hover { text-decoration: underline; }
+.blue { color: #008BCC; }
+.center { text-align: center; }
+.small { font-size: 85%; }
+.header-right { float: right; text-align: right; font-weight: bold; }
+
+.splitter1 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 1px; }
+.splitter5 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 5px; }
+.splitter10 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 10px; }
+.splitter15 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 15px; }
+.splitter20 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 20px; }
+.splitter30 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 30px; }
+.splitter50 { clear: both; display: block; font-size: 1px; line-height: 1px; padding-top: 50px; }

@@ -1,0 +1,11 @@
+.uploadifyQueueItem, .uploadifyQueueItemFinal { margin-top: 5px; padding: 3px 0px; font-size: smaller; }
+.uploadifyError { color: Red; }
+.uploadifyQueueItem .cancel, .uploadifyQueueItemFinal .cancel { float: right; }
+.uploadifyProgress { border: 1px solid #008BCC; margin-top: 10px; }
+.uploadifyProgressBar { background-color: #008BCC; width: 1px; height: 3px; }
+
+.uploadifyQueueItemFinal .uploadifyProgress { border: 0; margin-top: 10px; }
+.uploadifyQueueItemFinal .uploadifyProgressBar { background-color: #fff; width: 1px; height: 1px; }
+
+.uploadifyQueueItemFinal .cancel a, .uploadifyQueueItemFinal .cancel a:visited, .uploadifyQueueItem .cancel a, .uploadifyQueueItem .cancel a:visited { cursor: pointer; color: #008BCC; text-decoration: none; font-weight: bold; }
+.uploadifyQueueItemFinal .cancel  a:hover, .uploadifyQueueItem .cancel  a:hover { text-decoration: underline; }
